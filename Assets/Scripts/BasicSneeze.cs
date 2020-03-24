@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sneeze : MonoBehaviour {
+public class BasicSneeze : MonoBehaviour {
 
     [SerializeField]
     private Transform spawnPoint;

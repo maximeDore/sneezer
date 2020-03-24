@@ -12,31 +12,27 @@ public class PlayerMovement : MonoBehaviour {
     // Components
     private Rigidbody2D rb;
     private Camera cam;
+    private Animator anim;
 
     // System
-    Vector2 movement;
-    Vector2 mousePos;
+    private Vector2 movement;
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         cam = Camera.main;
+        anim = GetComponent<Animator>();
     }
 
     void Update() {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        // Set the moving state to the animator
+        anim.SetBool("isMoving", movement.x != 0 ? true : movement.y != 0 ? true : false);
     }
 
     void FixedUpdate() {
         // Movement
         rb.MovePosition(rb.position + movement * movementSpeed * Time.fixedDeltaTime);
-
-        Vector2 orientation = mousePos - rb.position;
-
-        float angle = Mathf.Atan2(orientation.y, orientation.x) * Mathf.Rad2Deg - 90f;
-
-        rb.rotation = angle;
     }
 }
