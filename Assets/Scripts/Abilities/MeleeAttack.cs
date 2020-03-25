@@ -31,8 +31,8 @@ using UnityEngine;
 //     }
 // }
 
-[CreateAssetMenu (menuName = "Abilities/ConeAttack")]
-public class ConeAttack : Ability {
+[CreateAssetMenu (menuName = "Abilities/MeleeAttack")]
+public class MeleeAttack : Ability {
 
     // The A is for Ability
     public int baseDamage = 1;
