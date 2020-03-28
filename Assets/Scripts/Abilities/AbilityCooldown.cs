@@ -25,7 +25,7 @@ public class AbilityCooldown : MonoBehaviour {
         myButtonImage.sprite = ability.aSprite;
         darkMask.sprite = ability.aSprite;
         cooldownDuration = ability.aBaseCoolDown;
-        // ability.Initialize(weaponHolder);
+        ability.Initialize(weaponHolder);
         AbilityReady();
     }
 
@@ -55,7 +55,7 @@ public class AbilityCooldown : MonoBehaviour {
     private void Cooldown() {
         cooldownTimeLeft -= Time.deltaTime;
         float roundedCd = Mathf.Round(cooldownTimeLeft);
-        cooldownTextDisplay.text = roundedCd.ToString();
+        cooldownTextDisplay.text = cooldownTimeLeft.ToString("F1");
         darkMask.fillAmount = (cooldownTimeLeft / cooldownDuration);
     }
 

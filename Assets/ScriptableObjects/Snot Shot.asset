@@ -17,4 +17,5 @@ MonoBehaviour:
   aSound: {fileID: 0}
   aBaseCoolDown: 1.5
   projectileVelocity: 100
-  projectile: {fileID: 0}
+  projectile: {fileID: 8746778900830036487, guid: b962e95d07ea0be4b8cbd35996253bc1,
+    type: 3}

@@ -35,19 +35,19 @@ using UnityEngine;
 public class MeleeAttack : Ability {
 
     // The A is for Ability
-    public int baseDamage = 1;
+    public int attackSpeed = 1;
+    public Animator attack;
 
-    private SneezeAttack prefab;
+    private MeleeShootTriggerable launcher;
 
     public override void Initialize(GameObject obj) {
-        prefab = obj.GetComponent<SneezeAttack>();
-        // prefab.Initialize
-
-        prefab.baseDamage = baseDamage;
+        launcher = obj.GetComponent<MeleeShootTriggerable>();
+        launcher.attackSpeed = attackSpeed;
+        launcher.attack = attack;
     }
 
     public override void TriggerAbility() {
-        // prefab.Attack();
+        launcher.Launch();
     }
 
 }
